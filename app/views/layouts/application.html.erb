@@ -7,9 +7,20 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
 
   <body>
+    <nav>
+      <%= link_to "Home", root_path %>
+      <% if @current_user.present? %>
+        <%= link_to "All Tickets", employees_path if @current_user.admin? %>
+        <%= link_to "Sign out #{ @current_user.email }", login_path, :method => 'delete' %>
+      <% else %>
+        <%= link_to "Sign up", new_employee_path %>
+        <%= link_to "Sign in", login_path %>
+      <% end %>
+    </nav>
     <%= yield %>
   </body>
 </html>

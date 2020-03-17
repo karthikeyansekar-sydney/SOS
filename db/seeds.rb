@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 Employee.destroy_all
 
-Employee.create(:name => 'karthik', :email => 'karthik@gmail.com', :password => 'karthik', :admin => true )
-Employee.create(:name => 'michael', :email => 'michael@gmail.com', :password => 'michael')
+Employee.create(:name => 'karthik', :email => 'karthik@gmail.com', :password => 'karthik', :admin => true, :tfnnumber => 2122)
+Employee.create(:name => 'michael', :email => 'michael@gmail.com', :password => 'michael', :admin => false, :tfnnumber => 2132)
 
 puts "#{ Employee.count } employees created."
