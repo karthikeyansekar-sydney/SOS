@@ -1,0 +1,9 @@
+<h1>All Orders</h1>
+
+
+<% @orders.each do |order| %>
+  <p><%= order.name %></p>
+    <p><%= order.status %></p>
+  <p><%= order.item %></p>
+  <p><%= order.id %></p>
+<% end %>

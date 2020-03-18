@@ -1,5 +1,29 @@
 <h1>Welcome to the software ordering services portal</h1>
-<% if @current_user.present? %>
-<h2> Welcome  <%= @current_user.name %></h2>
+<% if @current_user.present?%>
+<h2>Welcome<%= @current_user.name %></h2>
 <% end %>
+
+<% if @current_user.present? && @current_user.admin==false %>
+<%= link_to "Click here to view your current orders", order_path(@current_user.id)%>
 <p>Raise your tickets here</p>
+
+<%= form_for Order.new do |f| %>
+
+<div class="form-group">
+  <%= f.label :item%>
+  <%= f.text_field :item, :required => true, :autofocus => true, :class => 'form-control' %>
+</div>
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, :required => true, :autofocus => true, :class => 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :projectname %>
+    <%= f.text_field :projectname, :required => true, :class => 'form-control' %>
+  </div>
+
+  <%= f.submit "submit!" %>
+<% end %>
+
+<% end %>
