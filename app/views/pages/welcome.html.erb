@@ -1,2 +1,5 @@
 <h1>Welcome to the software ordering services portal</h1>
+<% if @current_user.present? %>
+<h2> Welcome  <%= @current_user.name %></h2>
+<% end %>
 <p>Raise your tickets here</p>
