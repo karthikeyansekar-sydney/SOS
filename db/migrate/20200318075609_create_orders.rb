@@ -4,7 +4,7 @@ class CreateOrders < ActiveRecord::Migration[5.2]
       t.string :item
       t.string :name
       t.string :projectname
-      t.string :status
+      t.string :status, :default => 'pending'
       t.references :employee, foreign_key: true
 
       t.timestamps

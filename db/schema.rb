@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 2020_03_18_075609) do
     t.string "item"
     t.string "name"
     t.string "projectname"
-    t.string "status"
+    t.string "status", default: "pending"
     t.bigint "employee_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

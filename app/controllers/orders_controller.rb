@@ -16,6 +16,6 @@ end
 
 private
 def order_params
-  params.require(:order).permit(:item, :name, :projectname, :status => 'Pending')
+  params.require(:order).permit(:item, :name, :projectname)
 end
 end
