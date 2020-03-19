@@ -7,15 +7,14 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Order.destroy_all
-
-Order.create(:item => 'VisualStudio', :name => 'version2', :projectname => 'unisys', :status => 'pending', :employee_id => 7)
-Order.create(:item => 'RailsServer', :name => 'version3', :projectname => 'ernestandyoung', :status => 'pending', :employee_id => 8)
-
+o1 = Order.create(:item => 'VisualStudio', :name => 'version2', :projectname => 'UNISYS')
+o2 = Order.create(:item => 'RailsServer', :name => 'version3', :projectname => 'E&Y')
 puts "#{ Order.count } orders created."
 
 Employee.destroy_all
-
-Employee.create(:name => 'karthik', :email => 'karthik@gmail.com', :password => 'karthik', :admin => true, :tfnnumber => 2122)
-Employee.create(:name => 'michael', :email => 'michael@gmail.com', :password => 'michael', :admin => false, :tfnnumber => 2132)
-
+e1 = Employee.create(:name => 'karthik', :email => 'karthik@gmail.com', :password => 'chicken', :admin => true, :tfnnumber => 2122)
+e2 = Employee.create(:name => 'michael', :email => 'michael@gmail.com', :password => 'chicken', :tfnnumber => 2132)
 puts "#{ Employee.count } employees created."
+
+e1.orders << o1
+e2.orders << o2

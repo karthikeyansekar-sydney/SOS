@@ -1,19 +1,61 @@
 <h1>All Orders</h1>
-<table>
-  <tr>
-      <th>Id</th>
-    <th>Name</th>
-    <th>Status</th>
-    <th>Item</th>
-    <th>ProjectName</th>
-  </tr>
+
+    <div class="container">
+  <div class="row no-gutters">
+      <div class="col">
+    <strong>Id</strong>
+      </div>
+      <div class="col">
+    <strong>Name</strong>
+      </div>
+      <div class="col">
+    <strong>Status</strong>
+      </div>
+      <div class="col">
+    <strong>Project Name</strong>
+      </div>
+      <div class="col">
+
+      </div>
+      <div class="col-sm">
+
+      </div>
+      </div>
+
 <% @orders.each do |order| %>
-  <tr>
-    <td><%= order.id %></td>
-    <td><%= order.name %></td>
-    <td><%= order.status %></td>
-    <td><%= order.item %></td>
-    <td><%= order.projectname %></td>
-  </tr>
+<div class="row no-gutters">
+<div class="col">
+<%= order.id %>
+</div>
+    <div class="col">
+      <%= order.name %>
+    </div>
+    <div class="col">
+      <%= order.status %>
+    </div>
+    <div class="col">
+      <%= order.projectname %>
+    </div>
+
+    <% if order.status == 'pending'%>
+    <div class="col-sm">
+<%= form_tag order_path(order.id), method: :put do %>
+<%= hidden_field_tag :status, 'Approved' %>
+<%= hidden_field_tag :order_id, order.id %>
 <% end %>
-</table>
+<button class='btn btn-success btn-sm' type="submit">Approve</button>
+</div>
+<div class="col-sm">
+<%= form_tag order_path(order.id), method: :put do %>
+<%= hidden_field_tag :status, 'Rejected' %>
+<%= hidden_field_tag :order_id, order.id %>
+<% end %>
+<button class='btn btn-danger btn-sm' type="submit">Reject</button>
+</div>
+<div class="w-100"></div>
+
+</div>
+<% end %>
+<% end %>
+
+</div>

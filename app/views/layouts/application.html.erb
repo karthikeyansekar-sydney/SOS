@@ -11,8 +11,10 @@
   </head>
 
   <body>
-<div class="container">
-    <nav>
+
+
+     <nav  >
+
       <%= link_to "Home", root_path %>
       <% if @current_user.present? %>
         <%= link_to "All Orders", orders_path if @current_user.admin? %>
@@ -23,7 +25,7 @@
         <%= link_to "Sign in", login_path %>
       <% end %>
     </nav>
-    </div>
+
     <%= yield %>
   </body>
 </html>

@@ -12,7 +12,7 @@
 
   <div class="form-group">
     <%= label_tag :password %>
-    <%= password_field_tag :password %>
+    <%= password_field_tag :password, nil, :class => 'form-control'  %>
   </div>
 
   <%= submit_tag "Sign in", :class => 'btn btn-danger btn-sm' %>

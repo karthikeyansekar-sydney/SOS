@@ -13,3 +13,71 @@
  *= require_tree .
  *= require_self
  */
+ h1 {
+	/* margin: 0 auto; */
+font-family: "Raleway", sans-serif;
+background-color: #F15B31;
+color: #FFFFFF;
+padding: 1em;
+letter-spacing: 1px;
+font-weight: 350;
+font-size: 35px;
+ width: 960px;
+ border-radius: 0.5em;
+}
+/* .container {
+  width: 960px;
+  background-color: #FACCC9;
+  margin: 0 auto;
+  padding: 1em;
+  border-radius: 0.5em;
+
+} */
+
+.container {
+  background-color: white;
+  border-radius: 0.5em;
+}
+ body {
+ 	width: 960px;
+ 	/* margin: 35px auto 35px auto; */
+  margin: 0 auto;
+     text-align: center;
+     border-radius: 0.5em;
+     background-image: url("https://www.evoldesign.com/wp-content/uploads/2013/10/slider_background_1.jpg");
+     /* background-image: url("https://adwebdesign.ro/wp-content/uploads/2019/02/blurred-background-coffee-cup-computer-908284-1024x684.jpg") */
+ }
+ .clearfix:after {
+visibility: hidden;
+display: block;
+content: " ";
+clear: both;
+height: 0;
+font-size: 0;
+}
+
+nav {
+  display: flex;
+  justify-content: space-evenly;
+  border-radius: 0.5em;
+  margin: 15px;
+}
+
+nav a {
+  color: #080201;
+  text-decoration: none;
+}
+
+nav a:hover {
+  background-color: #7CFA04;
+  opacity: 0.5;
+  color: blue;
+  border-radius: 0.5em;
+  box-shadow: 5px 5px #82500ec4;
+  text-decoration: none;
+}
+.name
+{
+color: #F15B31;
+font-weight: 700;
+}

@@ -1,7 +1,12 @@
-<h1>Welcome to the software ordering services portal</h1>
+<body>
+  <h1>Software Ordering Services</h1>
+<div class="container">
+  <header>
+
 <% if @current_user.present?%>
 <h2>Welcome<%= @current_user.name %></h2>
 <% end %>
+</header>
 
 <% if @current_user.present? && @current_user.admin==false %>
 <%= link_to "Click here to view your current orders", order_path(@current_user.id)%>
@@ -27,3 +32,12 @@
 <% end %>
 
 <% end %>
+<footer class="clearfix">
+	<p class="copyright"> Copyright 2017</p>
+	<p class="message">
+		Created with &hearts; by <span class="name">karthikeyan</span>
+	</p>
+
+</footer>
+</div>
+</body>

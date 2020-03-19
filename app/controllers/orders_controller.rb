@@ -13,6 +13,12 @@ def show
  @employee = Employee.find(session[:user_id])
   @orders = Order.where((["employee_id = ?", session[:user_id]]))
 end
+def update
+  @order = Order.find(params[:id])
+  @order.status = params[:status]
+  @order.save
+  redirect_to orders_path
+end
 
 private
 def order_params
