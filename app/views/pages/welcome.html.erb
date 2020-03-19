@@ -3,14 +3,44 @@
 <div class="container">
   <header>
 
-<% if @current_user.present?%>
-<h2>Welcome<%= @current_user.name %></h2>
+<% if @current_user.present? && @current_user.admin == false %>
+<h2>Welcome <span class="names"> <%= @current_user.name %></span></h2>
+<% else %>
+<% if @current_user.present? %>
+<h2>Welcome <span class="names"> Administrator</span></h2>
+<% end %>
+<div class="card-deck">
+  <div class="card">
+    <img src="https://cdn.windowsreport.com/wp-content/uploads/2019/07/Microsofts-Visual-Studio-2019-version-16.2-brings-productivity-changes.png" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Visual Studio</h5>
+      <p class="card-text">Visual Studio 2019 is an integrated, complete solution with development tools, cloud services and extensions that enables you and your team to create great applications and games for desktops, the web, Android and iOS.</p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+  <div class="card">
+    <img src="https://f0.pngfuel.com/png/177/242/java-logo-plain-old-java-object-programming-language-computer-programming-object-oriented-programming-others-png-clip-art-thumbnail.png" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Java</h5>
+      <p class="card-text">Java is a high-level programming language developed by Sun Microsystems. It was originally designed for developing programs for set-top boxes and handheld devices, but later became a popular choice for creating web applications.</p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+  <div class="card">
+    <img src="https://www.ibt.com.au/wp-content/uploads/2015/01/Oracle-Peoplesoft-e1435552997476.png" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Oracle-peoplesoft</h5>
+      <p class="card-text">Oracle's PeopleSoft applications are designed to address the most complex business requirements. They provide comprehensive business and industry solutions, enabling organizations to increase productivity, accelerate business performance.</p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+</div>
 <% end %>
 </header>
 
 <% if @current_user.present? && @current_user.admin==false %>
 <%= link_to "Click here to view your current orders", order_path(@current_user.id)%>
-<p>Raise your tickets here</p>
+<marquee><h3>Raise your tickets here</h3></marquee>
 
 <%= form_for Order.new do |f| %>
 
@@ -28,14 +58,13 @@
     <%= f.text_field :projectname, :required => true, :class => 'form-control' %>
   </div>
 
-  <%= f.submit "submit!" %>
+  <%= f.submit "submit!", :class => "btn btn-outline-success"%>
 <% end %>
 
 <% end %>
 <footer class="clearfix">
-	<p class="copyright"> Copyright 2017</p>
 	<p class="message">
-		Created with &hearts; by <span class="name">karthikeyan</span>
+		Created with &hearts; by karthikeyan
 	</p>
 
 </footer>

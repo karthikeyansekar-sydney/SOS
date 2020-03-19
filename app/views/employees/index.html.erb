@@ -1,9 +1,38 @@
-<h1>All Users</h1>
+<h1>All Employee Details</h1>
+<div class="container">
+<div class="row">
+      <div class="col">
+    <strong>Employee Id</strong>
+      </div>
+      <div class="col">
+    <strong> Name </strong>
+      </div>
+      <div class="col">
+    <strong>Email Id</strong>
+      </div>
+      <div class="col">
+    <strong>TFN Number</strong>
+      </div>
+      </div>
 
-<marquee>
-  <h2>Software Ordering Services</h2>
-</marquee>
+    <div class="row">
+  <% @users.each do |user| %>
+  <div class="col-3">
+    <%= user.id %>
+  </div>
+      <div class="col-3">
+        <%= user.name %>
+      </div>
+      <div class="col-3">
+        <%= user.email %>
+      </div>
+      <div class="col-3">
+        <%= user.tfnnumber %>
 
-<% @users.each do |user| %>
-  <p><%= user.email %></p>
-<% end %>
+      </div>
+
+      <% end %>
+
+    </div>
+
+    </div>

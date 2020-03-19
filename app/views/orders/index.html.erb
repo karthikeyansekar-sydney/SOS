@@ -1,61 +1,71 @@
 <h1>All Orders</h1>
 
     <div class="container">
-  <div class="row no-gutters">
-      <div class="col">
-    <strong>Id</strong>
+  <div class="row">
+      <div class="col-2">
+    <strong>Employee Id</strong>
       </div>
-      <div class="col">
+      <div class="col-2">
     <strong>Name</strong>
       </div>
-      <div class="col">
+      <div class="col-2">
     <strong>Status</strong>
       </div>
-      <div class="col">
+      <div class="col-2">
     <strong>Project Name</strong>
       </div>
-      <div class="col">
+      <div class="col-2">
 
       </div>
-      <div class="col-sm">
+      <div class="col-2">
 
       </div>
       </div>
 
 <% @orders.each do |order| %>
-<div class="row no-gutters">
-<div class="col">
-<%= order.id %>
+<div class="row">
+<div class="col-2">
+<%= order.employee_id %>
 </div>
-    <div class="col">
+    <div class="col-2">
       <%= order.name %>
     </div>
-    <div class="col">
+    <div class="col-2">
       <%= order.status %>
     </div>
-    <div class="col">
+    <div class="col-2">
       <%= order.projectname %>
     </div>
-
-    <% if order.status == 'pending'%>
-    <div class="col-sm">
+  <% if order.status == 'pending'%>
+  <div class="col-2">
 <%= form_tag order_path(order.id), method: :put do %>
 <%= hidden_field_tag :status, 'Approved' %>
 <%= hidden_field_tag :order_id, order.id %>
-<% end %>
 <button class='btn btn-success btn-sm' type="submit">Approve</button>
+<% end %>
 </div>
-<div class="col-sm">
+<div class="col-2">
 <%= form_tag order_path(order.id), method: :put do %>
 <%= hidden_field_tag :status, 'Rejected' %>
 <%= hidden_field_tag :order_id, order.id %>
-<% end %>
 <button class='btn btn-danger btn-sm' type="submit">Reject</button>
+<% end %>
 </div>
-<div class="w-100"></div>
+
+<% else %>
+<div class="col-2">
 
 </div>
+<div class="col-2">
+
+</div>
+</div>
 <% end %>
+
 <% end %>
+
+
+
+
 
 </div>
