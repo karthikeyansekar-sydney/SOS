@@ -13,54 +13,44 @@
  *= require_tree .
  *= require_self
  */
- @import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
- @import url('https://fonts.googleapis.com/css?family=Fredoka+One&display=swap');
- @import url('https://fonts.googleapis.com/css?family=Playfair+Display+SC&display=swap');
- h1 {
-/* margin: 0 auto; */
-font-family: 'Playfair Display SC', serif;
-background-color: #F15B31;
-color: #FFFFFF;
-padding: 1em;
-letter-spacing: 1px;
-font-weight: 350;
-font-size: 35px;
- width: 960px;
- border-radius: 0.5em;
- box-shadow: 5px 5px #ba310b;
-}
-/* .container {
-  width: 960px;
-  background-color: #FACCC9;
-  margin: 0 auto;
-  padding: 1em;
-  border-radius: 0.5em;
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Fredoka+One&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display+SC&display=swap');
 
-} */
+h1 {
+  font-family: 'Playfair Display SC', serif;
+  background-color: #F15B31;
+  color: #FFFFFF;
+  padding: 1em;
+  letter-spacing: 1px;
+  font-weight: 350;
+  font-size: 35px;
+  width: 960px;
+  border-radius: 0.5em;
+  box-shadow: 5px 5px #ba310b;
+}
 
 .container {
   background-color: white;
   border-radius: 0.5em;
-  /* margin: 0 auto; */
   box-shadow: 5px 5px #FDEEEA;
-
 }
- body {
- 	width: 960px;
- 	/* margin: 35px auto 35px auto; */
+
+body {
+  width: 960px;
   margin: 0 auto;
-     text-align: center;
-     border-radius: 0.5em;
-     background-image: url("https://www.evoldesign.com/wp-content/uploads/2013/10/slider_background_1.jpg");
-     /* background-image: url("https://adwebdesign.ro/wp-content/uploads/2019/02/blurred-background-coffee-cup-computer-908284-1024x684.jpg") */
- }
- .clearfix:after {
-visibility: hidden;
-display: block;
-content: " ";
-clear: both;
-height: 0;
-font-size: 0;
+  text-align: center;
+  border-radius: 0.5em;
+  background-image: url("https://www.evoldesign.com/wp-content/uploads/2013/10/slider_background_1.jpg");
+}
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  content: " ";
+  clear: both;
+  height: 0;
+  font-size: 0;
 }
 
 nav {
@@ -76,9 +66,9 @@ nav a {
 }
 
 nav a:hover {
-  background-color: #7CFA04;
-  opacity: 0.5;
-  color: blue;
+  background-color: #F15B31;
+  opacity: 1;
+  color: #22F86D;
   border-radius: 0.5em;
   box-shadow: 5px 5px #82500ec4;
   text-decoration: none;
@@ -88,26 +78,38 @@ label {
   color: white;
 }
 
-footer
-{
-	margin: 0;
-	text-transform: uppercase;
-	padding-left: 20px;
-	padding-right: 20px;
-	background-color: #0D2C40;
-	color: #ffffff;
-	font-weight: 500;
-	letter-spacing: .08em;
-	font-size: 14px;
+footer {
+  margin: 0;
+  text-transform: uppercase;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: #0D2C40;
+  color: #ffffff;
+  font-weight: 500;
+  letter-spacing: .08em;
+  font-size: 14px;
 }
-.name
-{
-color: #F15B31;
-font-weight: 700;
+
+.name {
+  color: #F15B31;
+  font-weight: 700;
 }
-.names
-{
-color: #F82239;
-font-weight: 700;
-font-family: 'Fredoka One', cursive;
+
+.names {
+  color: #F82239;
+  font-weight: 700;
+  font-family: 'Fredoka One', cursive;
+}
+
+#approve:hover {
+  color: green;
+}
+
+#reject:hover {
+  color: red;
+}
+
+.ticket {
+  color: black;
+  font-weight: bold;
 }

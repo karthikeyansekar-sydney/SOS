@@ -1,54 +1,62 @@
 <h1>Your Orders</h1>
-
-    <div class="container">
-      <div class="row">
-          <div class="col-2">
-        <h3>  Id </h3>
-          </div>
-          <div class="col-2">
-        <h3>   Name </h3>
-          </div>
-          <div class="col-2">
-        <h3>   Status </h3>
-          </div>
-          <div class="col-3">
-        <h3>   Project Name </h3>
-          </div>
-          <div class="col-2">
-
-          </div>
-          </div>
+<div class="container">
   <div class="row">
-<% @orders.each do |order| %>
-<div class="col-2">
-  <%= order.id %>
+    <div class="col-2">
+      <strong>
+        Id
+      </strong>
+    </div>
+    <div class="col-2">
+      <strong>
+        Software_Package
+      </strong>
+    </div>
+    <div class="col-2">
+      <strong>
+        Version
+      </strong>
+    </div>
+    <div class="col-2">
+      <strong>
+        Status
+      </strong>
+    </div>
+    <div class="col-2">
+      <strong>
+        Project Name
+      </strong>
+    </div>
+    <div class="col-2">
+    </div>
+  </div>
+  <div class="row">
+    <% @orders.each do |order| %>
+      <div class="col-2">
+        <%= order.id %>
+      </div>
+      <div class="col-2">
+        <%= order.item %>
+      </div>
+      <div class="col-2">
+        <%= order.name %>
+      </div>
+      <div class="col-2">
+        <%= order.status %>
+      </div>
+      <div class="col-2">
+        <%= order.projectname %>
+      </div>
+      <% if order.status == 'pending'%>
+        <div class="col-2">
+          <%= form_tag order_path(order.id), method: :delete do %>
+          <%= hidden_field_tag :status, 'Approved' %>
+          <%= hidden_field_tag :order_id, order.id %>
+          <button class='btn btn-link' id='reject' type="submit">Delete</button>
+        <% end %>
+      </div>
+    <% else %>
+      <div class="col-2"></div>
+    <% end %>
+  <% end %>
 </div>
-    <div class="col-2">
-      <%= order.name %>
-    </div>
-    <div class="col-2">
-      <%= order.status %>
-    </div>
-    <div class="col-3">
-      <%= order.projectname %>
-    </div>
-    <% if order.status == 'pending'%>
-    <div class="col-2">
-  <%= form_tag order_path(order.id), method: :delete do %>
-  <%= hidden_field_tag :status, 'Approved' %>
-  <%= hidden_field_tag :order_id, order.id %>
-  <button class='btn btn-danger btn-sm' type="submit">Delete</button>
-  <% end %>
-  </div>
-
-
-
-  <% else %>
-  <div class="col-2">
-
-  </div>
-
-  <% end %>
-  <% end %>
-  </div>
-  </div>
+</div>
