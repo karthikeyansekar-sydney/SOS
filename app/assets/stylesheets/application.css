@@ -30,7 +30,7 @@ h1 {
   box-shadow: 5px 5px #ba310b;
 }
 
-.container {
+.container-fluid {
   background-color: white;
   border-radius: 0.5em;
   box-shadow: 5px 5px #FDEEEA;
@@ -90,6 +90,10 @@ footer {
   font-size: 14px;
 }
 
+.home {
+  color: black;
+}
+
 .name {
   color: #F15B31;
   font-weight: 700;
@@ -112,4 +116,9 @@ footer {
 .ticket {
   color: black;
   font-weight: bold;
+}
+
+.card {
+  width: 308px;
+  height: 590px;
 }
